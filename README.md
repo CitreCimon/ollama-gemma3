@@ -1,16 +1,15 @@
-# Ollama Docker: Llama 3.2 and Gemma 3 Setup
+# Ollama Docker: Gemma 3 Setup
 
-This repository provides a Docker-based setup to run two language models using Ollama:
+This repository provides a Docker-based setup to run the following Model using Ollama:
 
 - gemma3:12b (Google)
 
-Both models are downloaded and ready to use when the container is started.
+The model is downloaded and ready to use when the container is started.
 
 ## Contents
 
-- Dockerfile: Installs both models during container startup
+- Dockerfile: Installs gemma3 during container startup
 - README.md: Instructions for building, running, and testing
-- Supports both GPU and CPU execution modes
 
 ## Build the Docker Image
 
