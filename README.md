@@ -2,7 +2,6 @@
 
 This repository provides a Docker-based setup to run two language models using Ollama:
 
-- llama3.2:3b (Meta)
 - gemma3:12b (Google)
 
 Both models are downloaded and ready to use when the container is started.
@@ -17,31 +16,15 @@ Both models are downloaded and ready to use when the container is started.
 
 Run the following command in the root directory to build the image:
 
-    docker build -t ollama-multimodel .
+    docker build -t ollama-gemma3 .
 
-## Run the Container with GPU Support
+## Run the Container with 
 
-Make sure the NVIDIA Container Toolkit is installed. Then run:
+    docker run -d -p 11434:11434 --name ollama_gemma3 ollama-gemma3
 
-    docker run -d --gpus all -p 11434:11434 --name ollama_gpu ollama-multimodel
+## Test the Model
 
-## Run the Container with CPU Only
-
-To use the CPU instead of the GPU, run:
-
-    docker run -d -p 11434:11434 --name ollama_cpu ollama-multimodel
-
-## Test the Models
-
-You can test the models using curl with the Ollama HTTP API.
-
-### Test Llama 3.2:3b
-
-    curl http://localhost:11434/api/generate -d '{
-      "model": "llama3.2:3b",
-      "prompt": "What is Ollama?",
-      "stream": false
-    }'
+You can test the model using curl with the Ollama HTTP API.
 
 ### Test Gemma 3:12b
 
