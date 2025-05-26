@@ -37,3 +37,17 @@ You can test the model using curl with the Ollama HTTP API.
 
 - Make sure your GPU environment is properly configured when using GPU mode.
 - CPU execution works but may be significantly slower, especially with larger models like gemma3:12b.
+
+
+## Add Another Model
+
+To add an additional model (for example, llama3:8b), use the following command to run ollama pull inside your running container:
+
+   ```bash
+    docker exec ollama_gemma3 ollama pull llama3:8b
+   ```
+
+
+## 📄 License
+
+This project is licensed under the Apache 2 License.
